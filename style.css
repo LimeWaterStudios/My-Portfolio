@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+    line-height:1.6;
+}
+
+/* BACKGROUND CANVAS */
+
+#bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 50px;
+
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.6rem;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s ease;
+}
+
+.nav-links a:hover{
+    color:#4da3ff;
+}
+
+/* HERO SECTION */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+.hero h1{
+    font-size:5rem;
+    font-weight:900;
+
+    background:linear-gradient(
+        90deg,
+        #4da3ff,
+        #8b5cf6
+    );
+
+    background-clip:text;
+    -webkit-background-clip:text;
+
+    color:transparent;
+    -webkit-text-fill-color:transparent;
+
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:700px;
+
+    font-size:1.2rem;
+
+    opacity:0.8;
+
+    margin-bottom:30px;
+}
+
+/* BUTTONS */
+
+.btn{
+    display:inline-block;
+
+    padding:14px 30px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:linear-gradient(
+        90deg,
+        #4da3ff,
+        #8b5cf6
+    );
+
+    transition:0.3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* GENERAL SECTIONS */
+
+.section{
+    padding:120px 10%;
+}
+
+.section h2{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:40px;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+}
+
+/* CARD */
+
+.card{
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 15px 40px
+    rgba(77,163,255,0.15);
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+.card p{
+    opacity:0.85;
+}
+
+/* IMAGE PLACEHOLDER */
+
+.img-placeholder{
+    width:100%;
+    height:220px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,0.08);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#888;
+
+    margin-bottom:20px;
+}
+
+/* COMING SOON */
+
+.coming-soon{
+    display:inline-block;
+
+    margin-top:15px;
+
+    background:#4da3ff;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:999px;
+
+    font-size:0.9rem;
+}
+
+/* PRICING */
+
+.pricing-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+}
+
+.price{
+    font-size:2rem;
+    font-weight:700;
+
+    color:#4da3ff;
+
+    margin:15px 0;
+}
+
+.card ul{
+    padding-left:20px;
+}
+
+.card li{
+    margin-bottom:10px;
+}
+
+/* FORM */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+
+    outline:none;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#bbb;
+}
+
+textarea{
+    resize:vertical;
+}
+
+button{
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        90deg,
+        #4da3ff,
+        #8b5cf6
+    );
+
+    transition:0.3s;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+/* CENTER */
+
+.center{
+    text-align:center;
+}
+
+/* FAQ */
+
+#faq .card h3{
+    margin-top:20px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+
+    padding:40px;
+
+    border-top:
+    1px solid rgba(255,255,255,0.08);
+
+    opacity:0.7;
+}
+
+/* ANIMATIONS */
+
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+
+    transition:
+    all 0.8s ease;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#050816;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#4da3ff;
+    border-radius:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .section{
+        padding:100px 25px;
+    }
+
+    .section h2{
+        font-size:2rem;
+    }
+}
+
+select {
+    color: #cfcfcf;
+    background-color: #0d0d0d;
+    border: 1px solid #2a2a2a;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+select option {
+    color: #e0e0e0;
+    background-color: #0d0d0d;
+}
+
+.discord-btn {
+    display:inline-block;
+    padding:14px 30px;
+    border-radius:12px;
+    text-decoration:none;
+    color:white;
+    background:#5865F2; /* Discord blurple */
+    transition:0.3s ease;
+}
+
+.discord-btn:hover {
+    transform:translateY(-3px);
+    opacity:0.9;
+}
+
+
+.project-img {
+    width: 100%;
+    height: 220px; /* set the exact height you want */
+    object-fit: cover; /* crops the image cleanly */
+    border-radius: 15px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Make card links look like normal cards, not hyperlinks */
+.card {
+    color: white;
+    text-decoration: none;
+}
+
+.card h3,
+.card p {
+    color: white;
+    text-decoration: none;
+}
+
+.card:hover {
+    text-decoration: none;
+}
+
+.card:visited,
+.card:active,
+.card:focus {
+    color: white;
+    text-decoration: none;
+}
+
+/* Remove blue link color from <a> wrapping the card */
+.grid a {
+    color: white;
+    text-decoration: none;
+}
