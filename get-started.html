@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started | Lime</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #050816;
+            color: white;
+            line-height: 1.6;
+        }
+
+        #bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, #4da3ff, #8b5cf6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(12px);
+        }
+
+        select, input, textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            margin-top: 10px;
+            background: rgba(255,255,255,0.08);
+            color: white;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #4da3ff, #8b5cf6);
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <canvas id="bg"></canvas>
+
+    <div class="container">
+
+        <h1>Get Started</h1>
+        <p>Choose your package and tell me about your project. I’ll get back to you as soon as possible.</p>
+
+        <!-- PACKAGE SELECTION -->
+        <div class="card">
+            <h2>Select a Package</h2>
+
+            <select id="packageSelect" required>
+                <option value="">Choose a Package</option>
+                <option>2‑Week Free Trial</option>
+                <option>Monthly Community Management (£9.99)</option>
+                <option>Yearly Community Management (£99.99)</option>
+                <option>Monthly Creator Management (£7.99)</option>
+                <option>Yearly Creator Management (£79.99)</option>
+                <option>Portfolio Website (from £11.99)</option>
+                <option>Game Wiki Website (from £26.99)</option>
+                <option>Custom Web Project</option>
+            </select>
+        </div>
+
+        <!-- DETAILS FORM -->
+        <div class="card">
+            <h2>Your Project Details</h2>
+
+            <form id="startForm">
+                <label>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </label>
+
+                <label>
+                    <input type="text" name="discord" placeholder="Discord Username (optional)">
+                </label>
+
+                <label>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </label>
+
+                <label>
+                    <textarea name="details" rows="6" placeholder="Describe your project..." required></textarea>
+                </label>
+
+                <button class="btn" type="submit">Submit & Continue</button>
+            </form>
+        </div>
+
+        <a href="index.html" class="btn">← Back to Portfolio</a>
+
+    </div>
+
+    <!-- FLOATING BALL BACKGROUND -->
+    <script>
+        const canvas = document.getElementById("bg");
+        const ctx = canvas.getContext("2d");
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener("resize", resizeCanvas);
+
+        let particles = [];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 8 + 2;
+                this.speedX = (Math.random() - 0.5) * 0.6;
+                this.speedY = (Math.random() - 0.5) * 0.6;
+                this.alpha = Math.random() * 0.5 + 0.3;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(255,255,255,${this.alpha})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < 60; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+
+        // FORM SUBMISSION
+        document.getElementById("startForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const form = e.target;
+            const formData = new FormData(form);
+
+            // Add selected package
+            formData.append("package", document.getElementById("packageSelect").value);
+
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            if (response.ok) {
+                alert("Your project request has been submitted!");
+                form.reset();
+            } else {
+                alert("There was an error submitting your request.");
+            }
+        });
+    </script>
+
+</body>
+</html>
