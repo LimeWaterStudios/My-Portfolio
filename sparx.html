@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparx Moderation Bot | Lime Portfolio</title>
+
+    <style>
+        body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #050816;
+    color: white;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Background Canvas */
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Main Container */
+.container {
+    max-width: 900px;
+    margin: 80px auto; /* extra spacing since banner is gone */
+    padding: 0 20px;
+}
+
+/* Title */
+h1 {
+    font-size: 3rem;
+    background: linear-gradient(90deg, #4da3ff, #8b5cf6);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 40px;
+}
+
+/* Card Style */
+.card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(12px);
+}
+
+ul {
+    padding-left: 20px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #4da3ff, #8b5cf6);
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Link Style */
+a {
+    color: #4da3ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* SCROLL REVEAL */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <canvas id="bg"></canvas>
+
+    <div class="container">
+
+        <!-- TITLE -->
+        <h1>Sparx Moderation Bot</h1>
+        <p><strong>Role:</strong> Owner and Developer</p>
+        <p><strong>Years Active:</strong> May 2026 – Present  
+
+
+        <!-- OVERVIEW -->
+        <div class="card">
+            <h2>Overview</h2>
+            <p>
+                coming soon...
+            </p>
+        </div>
+
+        <!-- RESPONSIBILITIES -->
+        <div class="card">
+            <h2>Responsibilities</h2>
+            <ul>
+                <li>coming soon...</li>
+            </ul>
+        </div>
+
+        <!-- ACHIEVEMENTS -->
+        <div class="card">
+            <h2>Achievements</h2>
+            <ul>
+                <li>coming soon...</li>
+            </ul>
+        </div>
+
+        <!-- LINKS -->
+        <div class="card">
+            <h2>Links</h2>
+            <p>coming soon...</p>
+            <p>
+                <a href="https://discord.gg/QatBQkadg8" target="_blank">
+                    Visit Sparx Community Server
+                </a>
+            </p>
+        </div>
+
+        <!-- BACK BUTTON -->
+        <a href="../index.html" class="btn">← Back to Portfolio</a>
+
+    </div>
+
+<script>
+    // SCROLL REVEAL
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add("show");
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll(".card, h1, h2, p").forEach(el => {
+        el.classList.add("hidden");
+        observer.observe(el);
+    });
+</script>
+
+    <!-- FLOATING BALL BACKGROUND -->
+<script>
+    const canvas = document.getElementById("bg");
+    const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    let particles = [];
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 8 + 2;
+            this.speedX = (Math.random() - 0.5) * 0.6;
+            this.speedY = (Math.random() - 0.5) * 0.6;
+            this.alpha = Math.random() * 0.5 + 0.3;
+        }
+
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        }
+
+        draw() {
+            ctx.fillStyle = `rgba(255,255,255,${this.alpha})`;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function initParticles() {
+        particles = [];
+        for (let i = 0; i < 60; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+
+        requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+</script>
+
+
+</body>
+</html>
