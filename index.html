@@ -1,357 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lime | Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lime | Developer Portfolio</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<canvas id="bg"></canvas>
 
-    <canvas id="bg"></canvas>
+<nav>
+<div class="logo">LIME</div>
+<div class="nav-links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Experience</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
 
-    <nav>
-        <div class="logo">LIME</div>
-
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#services">Services</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#hire">Hire Me</a>
-            <a href="#inquiries">Inquiries</a>
-            <a href="#faq">FAQ</a>
-        </div>
-    </nav>
-
-    <!-- HERO -->
-    <section id="home" class="hero">
-        <h1>Build. Manage. Create.</h1>
-
-        <p>
-            Community Management, Content Management, Website Development, and Professional Portfolio Services.
-        </p>
-
-        <p>
-            My name is <strong>Lime</strong>, and I’m a 14‑year‑old creator who genuinely loves what he does.
-            I work across community management, content management, and digital projects — building, organising,
-            and improving anything I get involved in. I’m also a big fan of anime, creativity, and anything that
-            lets me push my skills further. This portfolio includes my projects, experience, services, and a little
-            more about who I am and what I do.
-        </p>
-
-        <a href="#hire" class="btn">Hire Me</a>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio" class="section">
-        <h2>Portfolio</h2>
-
-        <div class="grid">
-
-            <a href="projects/ex-gang.html" class="card" target="_blank">
-                <img src="images/omega.jpg" alt="Ex Gang" class="project-img">
-                <h3>Ex Gang</h3>
-                <p>Server Manager and Moderator</p>
-            </a>
-
-            <a href="projects/donoboro.html" class="card" target="_blank">
-                <img src="images/Donoboro.png" alt="Donoboro" class="project-img">
-                <h3>Donoboro Community</h3>
-                <p>Administrator</p>
-            </a>
-
-            <a href="projects/wings-of-freedom.html" class="card" target="_blank">
-                <img src="images/wingsofreedom.gif" alt="Wings of Freedom" class="project-img">
-                <h3>Wings Of Freedom</h3>
-                <p>Former Moderator</p>
-            </a>
-
-            <a href="projects/warzone.html" class="card" target="_blank">
-                <img src="images/warzone.webp" alt="Warzone" class="project-img">
-                <h3>Warzone</h3>
-                <p>Former Head Administrator</p>
-            </a>
-
-            <a href="projects/zone-x.html" class="card" target="_blank">
-                <img src="images/zone x.webp" alt="Zone X" class="project-img">
-                <h3>Zone X</h3>
-                <p>Trial Moderator</p>
-            </a>
-
-            <a href="projects/vesperenity.html" class="card" target="_blank">
-                <img src="images/vesperenity.webp" alt="Vesperenity" class="project-img">
-                <h3>Vesperenity</h3>
-                <p>Co - Owner</p>
-            </a>
-
-            <a href="projects/mighty-assassins.html" class="card" target="_blank">
-                <img src="images/mightfreedy.webp" alt="Mighty Assassins" class="project-img">
-                <h3>Mighty Assasins</h3>
-                <p>Former Administrator</p>
-            </a>
-
-            <a href="projects/sparx.html" class="card" target="_blank">
-                <img src="images/Sparx.webp" alt="Sparx Bot" class="project-img">
-                <h3>Sparx Bot</h3>
-                <p>Owner and Developer</p>
-            </a>
-
-            <a href="projects/cold-world.html" class="card" target="_blank">
-                <img src="images/coldworld.webp" alt="Cold World" class="project-img">
-                <h3>Cold World</h3>
-                <p>Helper</p>
-            </a>
-
-            <a href="projects/ikari.html" class="card" target="_blank">
-                <img src="images/ikari.png" alt="Ikari No Shisha" class="project-img">
-                <h3>Ikari No Shisha</h3>
-                <p>Administrator</p>
-            </a>
-
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section">
-        <h2>Services</h2>
-
-        <div class="grid">
-
-            <div class="card">
-                <h3>Website Development</h3>
-                <p>Custom websites, portfolios, landing pages and business sites.</p>
-                <span class="coming-soon">Coming Soon</span>
-            </div>
-
-            <div class="card">
-                <h3>Community Management</h3>
-                <p>Discord management, moderation systems, staff training and growth.</p>
-                <span class="coming-soon">Coming Soon</span>
-            </div>
-
-            <div class="card">
-                <h3>Content Management</h3>
-                <p>Content planning, community engagement and branding.</p>
-                <span class="coming-soon">Coming Soon</span>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- PRICING -->
-    <section id="pricing" class="section">
-        <h2>Pricing</h2>
-
-        <div class="pricing-grid">
-
-            <div class="card">
-                <h3>Website Development</h3>
-                <p class="price">Custom</p>
-                <ul>
-                    <li>Portfolio Sites</li>
-                    <li>Landing Pages</li>
-                    <li>Responsive Design</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Community Management</h3>
-                <p class="price">Custom</p>
-                <ul>
-                    <li>Discord Setup</li>
-                    <li>Staff Systems</li>
-                    <li>Growth Planning</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Content Management</h3>
-                <p class="price">Custom</p>
-                <ul>
-                    <li>Scheduling</li>
-                    <li>Branding</li>
-                    <li>Community Posts</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-
-
-    <!-- PACKAGES -->
-<section id="packages" class="section">
-    <h2>Packages</h2>
-
-    <div class="pricing-grid">
-
-        <div class="card">
-            <h3>2‑Week Free Trial</h3>
-            <p class="price" data-price="0">£0.00</p>
-            <ul>
-                <li>Full access to community management / content management</li>
-                <li>Moderation systems</li>
-                <li>Server optimisation</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Monthly Community Management</h3>
-            <p class="price" data-price="9.99">£9.99</p>
-            <ul>
-                <li>Full server management</li>
-                <li>Staff coordination</li>
-                <li>Growth planning</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Yearly Community Management</h3>
-            <p class="price" data-price="99.99">£99.99</p>
-            <ul>
-                <li>Full server management</li>
-                <li>Priority support</li>
-                <li>Long‑term optimisation</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Monthly Creator Management</h3>
-            <p class="price" data-price="7.99">£7.99</p>
-            <ul>
-                <li>Creator scheduling</li>
-                <li>Branding support</li>
-                <li>Community engagement</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Yearly Creator Management</h3>
-            <p class="price" data-price="79.99">£79.99</p>
-            <ul>
-                <li>Long‑term creator support</li>
-                <li>Branding strategy</li>
-                <li>Engagement systems</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Portfolio Website</h3>
-            <p class="price" data-price="11.99">£11.99+</p>
-            <ul>
-                <li>Clean, modern design</li>
-                <li>Responsive layout</li>
-                <li>Custom sections</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Game Wiki Website</h3>
-            <p class="price" data-price="26.99">£26.99+</p>
-            <ul>
-                <li>Game documentation</li>
-                <li>Character pages</li>
-                <li>Update logs</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>Custom Web Project</h3>
-            <p>Contact for pricing</p>
-            <ul>
-                <li>Any type of website</li>
-                <li>Fully custom features</li>
-                <li>Professional design</li>
-            </ul>
-        </div>
-
-    </div>
+<section id="home" class="hero">
+<h1>Building Roblox Games.<br>Growing Communities.</h1>
+<p>Roblox Developer • Community Manager • Project Manager</p>
+<p>I help creators build successful Roblox experiences through scripting, project management and community leadership.</p>
+<a href="#projects" class="btn">View Projects</a>
 </section>
 
+<section id="about" class="section">
+<h2>About Me</h2>
+<div class="card">
+<p>I'm Lime, a Roblox developer with over 4 years of programming experience and 2+ years managing online communities. My long-term goal is to become a full-time Roblox developer while building my own game studio.</p>
+<h3>Core Skills</h3>
+<ul>
+<li>Roblox Lua Development</li>
+<li>Python Development</li>
+<li>HTML / CSS / JavaScript</li>
+<li>Community Management</li>
+<li>Project Management</li>
+<li>Content & Media Management</li>
+</ul>
+</div>
+</section>
 
+<section id="projects" class="section">
+<h2>Current Projects</h2>
+<div class="grid">
+<div class="card">
+<h3>Tensura Rebirth</h3>
+<p><strong>Owner & Lead Developer</strong></p>
+<p>Leading development, planning systems and building the game's future.</p>
+</div>
 
-    <!-- HIRE -->
-    <section id="hire" class="section">
-        <h2>Hire Me</h2>
+<div class="card">
+<h3>Anibloons</h3>
+<p><strong>Gameplay Developer</strong></p>
+<p>Developing gameplay systems and contributing new features.</p>
+</div>
 
-        <div class="card center">
-            <p>Coming soon...</p>
+<div class="card">
+<h3>Omega</h3>
+<p><strong>Server Manager</strong></p>
+<p>Managing one of the largest communities I've worked with.</p>
+</div>
+</div>
+</section>
 
-            <a href="#" class="btn" id="startProjectBtn">Start a Project</a>
-            <br><br>
+<section id="services" class="section">
+<h2>Services</h2>
+<div class="grid">
 
-            <a 
-                href="https://discord.com/users/1270007167541575854" 
-                target="_blank" 
-                class="discord-btn"
-            >
-                Add Me on Discord
-            </a>
-        </div>
-    </section>
+<div class="card">
+<h3>Roblox Development</h3>
+<ul>
+<li>Gameplay Systems</li>
+<li>Custom Lua Scripts</li>
+<li>Bug Fixes</li>
+<li>UI Programming</li>
+<li>Datastores</li>
+</ul>
+</div>
 
-    <!-- INQUIRIES -->
-    <section id="inquiries" class="section">
-        <h2>Inquiries</h2>
+<div class="card">
+<h3>Community Management</h3>
+<ul>
+<li>Server Management</li>
+<li>Staff Training</li>
+<li>Moderation Systems</li>
+<li>Community Growth</li>
+</ul>
+</div>
 
-        <div class="card">
-            <form id="inquiryForm">
-                <input type="hidden" name="access_key" value="dcb9a8f6-030e-47d0-b4ce-6d51ef83b189">
+<div class="card">
+<h3>Project Management</h3>
+<ul>
+<li>Roadmaps</li>
+<li>Team Coordination</li>
+<li>Documentation</li>
+<li>Production Planning</li>
+</ul>
+</div>
 
-                <label>
-                    <input type="text" name="name" placeholder="Your Name" required>
-                </label>
+<div class="card">
+<h3>Web Development</h3>
+<ul>
+<li>Portfolio Websites</li>
+<li>Game Wikis</li>
+<li>Landing Pages</li>
+</ul>
+</div>
 
-                <label>
-                    <input type="text" name="discord" placeholder="Discord Username (optional — if found via Discord)">
-                </label>
+</div>
+</section>
 
-                <label>
-                    <input type="email" name="email" placeholder="Email Address" required>
-                </label>
+<section id="portfolio" class="section">
+<h2>Experience</h2>
+<div class="grid">
+<div class="card"><h3>Ex Gang (Omega)</h3><p>Server Manager</p></div>
+<div class="card"><h3>Donoboro</h3><p>Administrator</p></div>
+<div class="card"><h3>Warzone</h3><p>Former Head Administrator</p></div>
+<div class="card"><h3>Sparx Bot</h3><p>Owner & Developer</p></div>
+</div>
+</section>
 
-                <label>
-                    <select name="service" required>
-                        <option value="">Select a Service</option>
-                        <option>Website Development</option>
-                        <option>Community Management</option>
-                        <option>Content Management</option>
-                    </select>
-                </label>
+<section class="section">
+<h2>Vision</h2>
+<div class="card">
+<p>My ambition is to build a successful Roblox studio, develop original games, and help other studios through development, project management and community leadership.</p>
+</div>
+</section>
 
-                <label>
-                    <textarea name="details" rows="6" placeholder="Describe your project..." required></textarea>
-                </label>
+<section id="contact" class="section">
+<h2>Contact</h2>
+<div class="card center">
+<p>Available for long-term projects, commissions and studio positions.</p>
+<a class="discord-btn" href="https://discord.com/users/1270007167541575854" target="_blank">Add Me on Discord</a>
+</div>
+</section>
 
-                <button type="submit">Submit Inquiry</button>
-            </form>
-        </div>
-    </section>
+<footer>
+<p>© 2026 LIME — Roblox Developer Portfolio</p>
+</footer>
 
-    <!-- FAQ -->
-    <section id="faq" class="section">
-        <h2>Frequently Asked Questions</h2>
-
-        <div class="card">
-            <h3>How do I hire you?</h3>
-            <p>Coming Soon</p>
-
-            <h3>What payment methods do you accept?</h3>
-            <p>PayPal</p>
-
-            <h3>Do you offer revisions?</h3>
-            <p>Yes, depending on the project.</p>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 LIME. All Rights Reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
